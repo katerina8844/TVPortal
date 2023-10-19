@@ -1,0 +1,80 @@
+.profile-name{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #1768AC;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0.5px 0.5px 0.5px #000000;
+}
+
+.profile-info{
+    text-align: center;
+
+}
+.profile-title-info{
+    font-size: 22px;
+    font-weight: bold;
+}
+.description-main{
+    margin: 4%;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.profile-card-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-top: 5%;
+}
+.profile-card{
+    background-color: #1768AC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 95%;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 0;
+    text-align: center;
+    border: 1.5px black solid;
+    flex: 0 1 auto;
+    height: 100px;
+}
+.profile-icon{
+    color: white;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.profile-card-name{
+    font-size:15px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0;
+    color: white;
+    text-shadow: 0.5px 0.5px 0.5px #000000;
+}
+
+.modal-info{
+    font-size: large;
+    text-align: start;
+    border: 1px black solid;
+    background-color: rgb(236, 235, 235);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.modal-body{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 10px;
+}
