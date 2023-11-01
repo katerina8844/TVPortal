@@ -74,6 +74,15 @@
   text-align: center;
   padding: 5% 0% 2% 0%;
 }
+
+.p-category-films{
+    font-size:12px;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0;
+    color: white;
+    text-shadow: 0.5px 0.5px 0.5px #000000;
+}
   
   /* общий див для  всех фильмов */
   .grid-films{
@@ -117,7 +126,7 @@
 /* стили для input */
 .input-tv{
   padding: 5px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   width: 100%;
   font-size: 22px;
   border-width: 2px;

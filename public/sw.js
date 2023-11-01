@@ -4,10 +4,9 @@ let CACHE_NAME = 'my-pwa-cache-v0.1.01';
 const CACHE_FILES = [
     '/',
     '/index.html',
-    './icons/logo512.png',
     '/tv',
     '/restourant',
-    '/buscket',
+    '/basket',
     '/excursions',
     '/excursions/*',
     '/service',

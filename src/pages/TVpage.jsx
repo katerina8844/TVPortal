@@ -76,53 +76,54 @@ export default function TVpage() {
     </div>
 
         <div className='category-film'>
-        {category?.length > 0 ? 
-        (category?.map((e , index) => <div onClick={()=>handleClick(e , index)}  className={index === activeIndex ? "category-name-film--active" : "category-name-film"}
-  key={e.id}>
-    <FontAwesomeIcon icon={faFilm} style={{fontSize: '50px'}}/>
-      <p className='p-category-films'>
-      {e.category}
-      </p>
-    </div>)) : ""
-    }
+              {category?.length > 0 ? 
+                (category?.map((e , index) => <div onClick={()=>handleClick(e , index)}  className={index === activeIndex ? "category-name-film--active" : "category-name-film"} key={e.id}>
+                  <FontAwesomeIcon icon={faFilm} style={{fontSize: '30px'}}/>
+                  <p className='p-category-films'>
+                    {e.category}
+                  </p>
+                </div>)) : ""
+              }
       </div>
       <Search  handleSearch={handleSearch}/>
-      {openPlayer ? (
-        <ReactPlayer 
-          url={url}
-          width="100%"
-          height="100%"
-          style={{
-              clipPath: 'inset(0 0 5% 0 round  5px 5px 5px 5px)',
-          }}
-            controls
-          />
-      ) : ''}
+        {openPlayer ? (
+          <ReactPlayer 
+            url={url}
+            width="100%"
+            height="100%"
+            
+            style={{
+                clipPath: 'inset(0 0 5% 0 round  5px 5px 5px 5px)',
+                marginTop: '20px'
+            }}
+              controls
+            />
+        ) : ''}
       <div className='div-card-film'>
         <p className='p-card-film'>{open ? filter[0]?.category : 'Все фильмы'}</p>
       </div>
       {!open1 ? (!open ? (
         <div className='grid-films' >
           {film?.map((el) => 
-          <div onClick={()=>clickHandler(el)} className="card-films" key={el.id} >
-            <TvOneCard film={el}/>
-          </div>
+            <div onClick={()=>clickHandler(el)} className="card-films" key={el.id} >
+              <TvOneCard film={el}/>
+            </div>
           )}
         </div>
       ):(
         <div className='grid-films' >
           {filter?.map((el) => 
-          <div onClick={()=>clickHandler(el)} className="card-films" key={el.id}>
-            <TvOneCard film={el} />
-          </div>
+            <div onClick={()=>clickHandler(el)} className="card-films" key={el.id}>
+              <TvOneCard film={el} />
+            </div>
           )}
         </div>
       )) : (
       <div className='grid-films' >
           {filteredItems?.map((el) => 
-          <div onClick={()=>clickHandler(el)} className="card-films" key={el.id}>
-            <TvOneCard film={el} />
-          </div>
+            <div onClick={()=>clickHandler(el)} className="card-films" key={el.id}>
+              <TvOneCard film={el} />
+            </div>
           )}
         </div>
       )}

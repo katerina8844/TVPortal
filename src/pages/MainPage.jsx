@@ -4,10 +4,11 @@ import {Container} from "react-bootstrap";
 import './stylePage/Main.css'
 import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDoorOpen, faFileCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faBasketShopping, faDoorOpen, faFileCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 import Orders from "../components/Main_card/Orders";
 import { getOrdersThunk } from "../redux/actions/ordersAction";
+import { persistor } from "../redux/store";
 
 
 
@@ -26,6 +27,10 @@ export default function MainPage() {
         dispatch(getOrdersThunk(data))
     }, [])
 
+    const handleLogout = () => {
+        persistor.purge()
+    }
+
     return (
         <>
         <Container>
@@ -33,20 +38,26 @@ export default function MainPage() {
             <h1 className='profile-name'>ПРОФИЛЬ</h1>
         </div>
         <div className="profile-info">
-        <h2 className="profile-title-info">Информация о пользователе</h2>
-        <p className="description-main"> Номер комнаты: {user?.data.room}</p>
-        <p className="description-main">ФИО : {user?.data.guest}</p>
+            <h2 className="profile-title-info">Информация о пользователе</h2>
+            <p className="description-main"> Номер комнаты: {user?.data.room}</p>
+            <p className="description-main">ФИО : {user?.data.guest}</p>
         </div>
         <div className="profile-card-info">
+            <NavLink to={'/basket'} style={{textDecoration: 'none'}}>
+                <div className="profile-card">
+                    <FontAwesomeIcon icon={faBasketShopping} className='profile-icon' />
+                    <p className="profile-card-name">Корзина</p>
+                </div>
+            </NavLink>
             <div className="profile-card" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <FontAwesomeIcon icon={faFileCircleCheck} className="profile-icon" />
                 <p className="profile-card-name">История заказов</p>
             </div>
             <NavLink to={'/'} style={{textDecoration: 'none'}}>
-            <div className="profile-card">
-                <FontAwesomeIcon icon={faDoorOpen}  className="profile-icon"  />
-                <p className="profile-card-name" >Выход</p>
-            </div>
+                <div className="profile-card" onClick={handleLogout}>
+                    <FontAwesomeIcon icon={faDoorOpen}  className="profile-icon"  />
+                    <p className="profile-card-name" >Выход</p>
+                </div>
             </NavLink>
         </div>
         <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

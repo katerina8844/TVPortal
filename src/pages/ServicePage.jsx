@@ -6,10 +6,8 @@ import { getServiceThunk } from '../redux/actions/infoAction'
 import CategoryService from '../components/ServiceComponents/CategoryService'
 import './stylePage/Service.css'
 import ServiceCard from '../components/ServiceComponents/ServiceCard'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBasketShopping } from '@fortawesome/free-solid-svg-icons'
-import { NavLink } from 'react-router-dom'
 import { getBasketThunk } from '../redux/actions/basketAction'
+import BasketButton from '../components/BasketButton/BasketButton'
 
 export default function ServicePage() {
     const service = useSelector((store) => store?.info)
@@ -61,32 +59,27 @@ export default function ServicePage() {
   return (
 <>
         <Container>
-        <div>
-            <h1 className='service-name'>СЕРВИСЫ</h1>
-        </div>
-        <NavLink to={'/buscket'}>
-        <FontAwesomeIcon icon={faBasketShopping} className='service-basket' />
-        <div className="service-circle">
-          <span>{basket?.length}</span>
-        </div>
-      </NavLink>
-        <div>
-            <div className='category-service' >
-                {category?.length > 0 ? (category?.map((el, index) => 
-                <div className={index === activeIndex ? "category-name-service--active" : "category-name-service"} onClick={() => clickHandler(el, index)} key={el.id}>
-                <CategoryService  item={el} />
-                </div>)) : ""
-                }
+            <div>
+                <h1 className='service-name'>СЕРВИСЫ</h1>
             </div>
-            <div className='div-card-service'>
-                {title ? (<p className='p-card-service'>{title?.name}</p>) : (<p className='p-card-service'>Выберите категорию в которой хотели бы получить услугу</p>)}
+            <BasketButton basket={basket}/>
+            <div>
+                <div className='category-service' >
+                    {category?.length > 0 ? (category?.map((el, index) => 
+                        <div className={index === activeIndex ? "category-name-service--active" : "category-name-service"} onClick={() => clickHandler(el, index)} key={el.id}>
+                            <CategoryService  item={el} />
+                        </div>)) : ""
+                    }
+                </div>
+                <div className='div-card-service'>
+                    {title ? (<p className='p-card-service'>{title?.name}</p>) : (<p className='p-card-service'>Выберите категорию в которой хотели бы получить услугу</p>)}
+                </div>
+                <div className='card-service'>
+                    {filterService?.map((el) =>
+                        <ServiceCard item={el}  key={el.id}/>
+                    ) }
+                </div>
             </div>
-            <div className='card-service'>
-                {filterService?.map((el) =>
-                <ServiceCard item={el}  key={el.id}/>
-                ) }
-            </div>
-        </div>
         </Container>
         <FooterNavigation />
     </>  

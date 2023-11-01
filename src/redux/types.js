@@ -14,6 +14,12 @@ export const GET_BASKET = 'GET_BASKET'
 
 export const ADD_BASKET = 'ADD_BASKET'
 
+export const CHANGE_BASKET = 'CHANGE_BASKET'
+
+export const REMOVE_BASKET = 'REMOVE_BASKET'
+
+
+
 
 
 

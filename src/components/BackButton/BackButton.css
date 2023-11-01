@@ -1,0 +1,22 @@
+.back-btn{
+    background-color: #daeff9;
+    border: 0px;
+    font-size: x-large;
+    color: #03256C;
+    padding: 0px;
+    position: fixed;
+    left: 15px; 
+    top :17px; 
+    z-index: 1;
+    border-radius: 50px;
+    margin: 0;     
+    z-index: 1;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px #1768AC solid;
+}

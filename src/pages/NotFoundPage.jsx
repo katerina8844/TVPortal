@@ -6,10 +6,10 @@ export default function NotFoundPage (){
     return(
         <>
         <Container>
-        <div>
-            <img className="img-not-found" src={'./img/icon404.png'} alt="pictures" />
-            <h1 className="not">К большому сожалению такой страницы не существует</h1>
-        </div>
+            <div>
+                <img className="img-not-found" src={'./img/icon404.png'} alt="pictures" />
+                <h1 className="not">К большому сожалению такой страницы не существует</h1>
+            </div>
         </Container>
         <FooterNavigation />
         </>

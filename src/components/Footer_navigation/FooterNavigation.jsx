@@ -57,6 +57,6 @@ export function FooterNavigation() {
                         <p className="footer-title">Выход</p>
                         </div>                 
                   </NavLink> */}
-        </nav>
-    )
+            </nav>
+      )
 }

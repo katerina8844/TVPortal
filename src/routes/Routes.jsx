@@ -34,7 +34,7 @@ export const routes = createBrowserRouter([
     { path: "/excursions", element: <LazyExcursionsPage/> },
     { path: "/excursions/:id", element: <LazyOneExcursionPage/> },
     { path: "/service", element: <LazyServicePage/> },
-    { path: "/buscket", element: <LazyBuscketPage/> },
+    { path: "/basket", element: <LazyBuscketPage/> },
     { path: "/main", element: <LazyMainPage/> ,
 
         children: [

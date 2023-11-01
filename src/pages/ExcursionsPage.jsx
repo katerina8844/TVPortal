@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Container } from 'react-bootstrap'
+// import { Container } from 'react-bootstrap'
 import { FooterNavigation } from '../components/Footer_navigation/FooterNavigation'
 import CardExcursions from '../components/CardExcursions/CardExcursions'
 import './stylePage/Excursion.css'
@@ -23,21 +23,18 @@ export default function ExcursionsPage() {
 
     return (
     <>
-    <Container>
+    {/* <Container> */}
         <div className='one-card-excursions'>
             <div>
                 <h1 className='title-excursion'>ЭКСКУРСИИ</h1>
             </div>
-           {
-              allExcursions?.length > 0 ? (allExcursions.map((el) => 
+              {allExcursions?.length > 0 ? (allExcursions.map((el) => 
               <NavLink to={`/excursions/${el.city_id}`} key={el.city_id}>
-                <CardExcursions  item={el}/> 
+                <CardExcursions   item={el}/> 
               </NavLink>
-              )) : (
-                <div>Loading...</div>)
-                }
+              )) : (<div>Loading...</div>)}
         </div>
-    </Container>
+    {/* </Container> */}
     <FooterNavigation/>
     </>
   )
